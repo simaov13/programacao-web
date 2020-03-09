@@ -62,7 +62,7 @@
 
     <?php } ?>
 
-    <h3>Total: <?php echo getTotal($carrinhoCompras); ?></h3>
+    <h3>Total: <?php echo getTotal($carrinhoCompras); ?>€</h3>
         
 </body>
 </html>
