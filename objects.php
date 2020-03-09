@@ -48,7 +48,7 @@
 
         <h2><?php echo $livro->getTitle(); ?></h2>
         Author: <?php echo $livro->getAuthor(); ?><br>
-        <strong><?php echo $livro->getPrice(); ?><strong>€
+        <strong><?php echo $livro->getPrice(); ?>€<strong>
 
     <?php } ?>
 
