@@ -4,6 +4,7 @@
         private $title;
         private $author;
         private $price;
+        private $total;
 
         function __construct($title, $author, $price) {
         $this->title = $title;
@@ -11,16 +12,21 @@
         $this->price = $price;
         }
 
+        //Methods
         function getTitle() {
-        return $this->title;
+            return $this->title;
         }
 
         function getAuthor() {
-        return $this->author;
+            return $this->author;
         }
 
         function getPrice() {
-        return $this->price;
+            return $this->price;
+        }
+
+        function getTotal() {
+            return $this->total;
         }
     }
 
@@ -52,7 +58,13 @@
 
     <?php } ?>
 
-    <h3>Total: <?php //TODO ?></h3>
+    <?php foreach ($carrinhoCompras as $total) { ?>
+        
+        <?php $total=array("livro1"=>20.79,"livro2"=>99.99,"livro3"=>15.68,"livro4"=>23.77); ?>
+
+    <?php } ?>
+
+    <h3>Total: <?php echo array_sum($total); ?></h3>
         
 </body>
 </html>
