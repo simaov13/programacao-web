@@ -5,7 +5,7 @@
         private $author;
         private $price;
 
-        function__construct($title, $author, $price) {
+        function __construct($title, $author, $price) {
         $this->title = $title;
         $this->author = $author;
         $this->price = $price;
@@ -44,13 +44,15 @@
 
     <h1>Carrinho de Compras</h1>
 
-    <?php foreach($carrinhoCompras as $livro){ ?>
+    <?php foreach($carrinhoCompras as $livro) { ?>
 
-        <h1><?php echo $harryPotter->getTitle(); ?></h1>
-        Author: <?php echo $harryPotter->getAuthor(); ?><br>
-        <strong><?php echo $harryPotter->getPrice(); ?>€<strong>
-        
+        <h2><?php echo $livro->getTitle(); ?></h2>
+        Author: <?php echo $livro->getAuthor(); ?><br>
+        <strong><?php echo $livro->getPrice(); ?>€<strong>
+
     <?php } ?>
+
+    <h3>Total: <?php //TODO ?></h3>
         
 </body>
 </html>
