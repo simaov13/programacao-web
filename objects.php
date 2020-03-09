@@ -41,6 +41,14 @@
         }
         return $total;
     }
+
+    function getDescontoLivros($carrinhoCompras) {
+        foreach ($carrinhoCompras as $livro) {
+            if ($price > 20) {
+                $price > $livro->getTitle();
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +71,8 @@
     <?php } ?>
 
     <h3>Total: <?php echo getTotal($carrinhoCompras); ?>€</h3>
+
+    <h3>Livros com desconto: <?php echo getDescontoLivros($carrinhoCompras); ?></h3>
         
 </body>
 </html>
