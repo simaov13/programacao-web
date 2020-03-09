@@ -23,11 +23,7 @@
 
         function getPrice() {
             return $this->price;
-        }
-
-        function getTotal() {
-            return $this->total;
-        }
+        }        
     }
 
     //Instance a "book" object
@@ -37,6 +33,14 @@
     $livro4 = new Book("Ensaio sobre a Cegueira", "Saramago", 23.77);
 
     $carrinhoCompras = array($livro1, $livro2, $livro3, $livro4);
+    
+    function getTotal($carrinhoCompras) {
+        $total = 0;
+        foreach ($carrinhoCompras as $livro) {
+            $total += $livro->getPrice();
+        }
+        return $total;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -58,13 +62,7 @@
 
     <?php } ?>
 
-    <?php foreach ($carrinhoCompras as $total) { ?>
-        
-        <?php $total=array("livro1"=>20.79,"livro2"=>99.99,"livro3"=>15.68,"livro4"=>23.77); ?>
-
-    <?php } ?>
-
-    <h3>Total: <?php echo array_sum($total); ?></h3>
+    <h3>Total: <?php echo getTotal($carrinhoCompras); ?></h3>
         
 </body>
 </html>
