@@ -12,16 +12,16 @@
         $cargo = "Mod";
 
         switch($cargo){
-            Case "Mod":
+            case "Mod":
                 echo "Bom dia Mod.";
                 break;
-            Case "Admin":
+            case "Admin":
                 echo "Bom dia Admin.";
                 break;
-            Case "Op":
+            case "Op":
                 echo "Bom dia Op.";
                 break;
-            Case "User":
+            case "User":
                 echo "Bom dia User.";
                 break;
             default:
