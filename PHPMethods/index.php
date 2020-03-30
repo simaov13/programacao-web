@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methods</title>
+    <title>HTTP Methods</title>
 </head>
 <body>
     Método GET
     <br><br>
 
-    <form action="greeter.php" method="GET">
-
-        Escreve o teu nome:
+    <form method="post" action="greeter.php">
+		
+		Escreve o teu nome:
         
         <br><br>
-
-        <label for="nome">Primeiro nome: </label>
-        <input type="text" name="primeiroNome">
-        
-        <br><br>
-
-        <label for="apelido">Último nome: </label>
-        <input type="text" name="apelido">
-
-        <button type="submit"> Enviar! </button>
-
-    </form>
+		
+		<label for="nome">Primeiro nome: </label>
+		<input type="text" name="primeiroNome">
+		
+		<br><br>
+		
+		<label for="nome">Apelido: </label>
+		<input type="text" name="apelido">
+		
+		<button type="submit">Enviar!</button>
+	
+	</form>
 </body>
 </html>
