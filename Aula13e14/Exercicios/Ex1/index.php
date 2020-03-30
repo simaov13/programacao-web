@@ -6,7 +6,7 @@
     <title>Ex1</title>
 </head>
 <body>
-    <form action="process.php" method="post">
+    <form action="process.php" method="GET">
         
         Escreve o teu nome e idade:
         
