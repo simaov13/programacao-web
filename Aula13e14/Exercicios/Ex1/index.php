@@ -23,7 +23,7 @@
         <br><br>
 
         <label for="idade">Ano Nascimento: </label>
-		<input type="date" name="anoNascimento">
+		<input type="number" name="anoNascimento">
         
         <button type="submit">Enviar!</button>
     </form>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex3</title>
+    <title>Ex2</title>
 </head>
 <body>
     <form action="bmi_result.php" method="GET">

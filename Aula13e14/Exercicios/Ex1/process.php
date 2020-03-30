@@ -6,7 +6,7 @@
             function CalcIdade($idade){
                 return date("Y") - $idade;
             }  
-            echo $_REQUEST["primeiroNome"] . " " . $_REQUEST["ultimoNome"] . " " . "tem" . " " . CalcIdade($idade) . " " . "anos" ;
+            echo $_REQUEST["primeiroNome"] . " " . $_REQUEST["ultimoNome"] . " " . "tem" . " " . CalcIdade($_REQUEST["anoNascimento"]) . " " . "anos" ;
     }else{
         echo "Tens que preencher os campos!";
     }
