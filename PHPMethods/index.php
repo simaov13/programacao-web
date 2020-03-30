@@ -11,18 +11,20 @@
 
     <form action="greeter.php" method="GET">
 
-        Escreve o teu nome:<br>
+        Escreve o teu nome:
+        
+        <br><br>
 
         <label for="nome">Primeiro nome: </label>
         <input type="text" name="primeiroNome">
-
+        
         <br><br>
 
         <label for="apelido">Último nome: </label>
         <input type="text" name="apelido">
 
         <button type="submit"> Enviar! </button>
-        
+
     </form>
 </body>
 </html>
