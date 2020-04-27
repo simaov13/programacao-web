@@ -4,13 +4,13 @@
 		public $userID;
 		public $primeiroNome;
 		public $ultimoNome;
-		public $dataNascimento;
+		public $anoNascimento;
 
-		function __construct($userID, $primeiroNome, $ultimoNome, $dataNascimento){
+		function __construct($userID, $primeiroNome, $ultimoNome, $anoNascimento){
 			$this->userID = $userID;
 			$this->primeiroNome = $primeiroNome;
 			$this->ultimoNome = $ultimoNome;
-			$this->dataNascimento = $dataNascimento;
+			$this->anoNascimento = $anoNascimento;
 		}
 	}
 
@@ -31,10 +31,14 @@
 
 		if($result->num_rows > 0){
 			while($row = $result->fetch_assoc()){
-				$user = new User($row["userID"], $row["primeiroNome"], $row["ultimoNome"], $row["dataNascimento"]);
+				$user = new User($row["userID"], $row["primeiroNome"], $row["ultimoNome"], $row["anoNascimento"]);
 				array_push($users, $user);
 			}
 		}
+	} 
+
+	function CalcIdade($anoNascimento){
+		return date("Y") - $anoNascimento;
 	}
 
 	if(isset($_GET["nome"]) && $_GET["nome"] != ""){
@@ -50,22 +54,12 @@
 
 	echo "Conexão establecida";
 
-	if(isset($_POST["primeiroNome"]) && $_POST["primeiroNome"] != "" && isset($_POST["ultimoNome"]) && $_POST["ultimoNome"] != "" && isset($_POST["dataNascimento"]) && $_POST["dataNascimento"] != ""){
+	if(isset($_POST["primeiroNome"]) && $_POST["primeiroNome"] != "" && isset($_POST["ultimoNome"]) && $_POST["ultimoNome"] != "" && isset($_POST["anoNascimento"]) && $_POST["anoNascimento"] != ""){
 
 		$primeiroNome = $mysqli->real_escape_string($_POST["primeiroNome"]);
 		$ultimoNome = $mysqli->real_escape_string($_POST["ultimoNome"]);
-		$dataNascimento = $mysqli->real_escape_string($_POST["dataNascimento"]);
+		$anoNascimento = $mysqli->real_escape_string($_POST["anoNascimento"]);
 
-		if (!filter_var($dataNascimento, FILTER_VALIDATE_dataNascimento)) {
-		  echo "<br>ERRO: Email inválido!";
-		}else{
-			$sql = "INSERT INTO user (primeiroNome, ultimoNome, dataNascimento) VALUES ('$primeiroNome', '$ultimoNome', '$dataNascimento')";
-			if($mysqli->query($sql)){
-				echo "<br>Utilizador inserido com sucesso!";
-			}else{
-				echo "<br>ERRO: Não foi possível inserir na base de dados!";
-			}
-		}
 	}
 
 	if(isset($_GET["eliminar"]) && $_GET["eliminar"]!=""){
@@ -101,8 +95,8 @@
 		<label for="ultimoNome">Último nome:</label>
 		<input type="text" name="ultimoNome">
 		<br>
-		<label for="dataNascimento">Data de nascimento:</label>
-		<input type="text" name="dataNascimento">
+		<label for="anoNascimento">Ano de Nascimento:</label>
+		<input type="number" name="anoNascimento">
 		<br><br>
 		<button>Inserir</button>
 	</form>
@@ -120,7 +114,7 @@
 	foreach($users as $user){
 			echo "userID: ". $user->userID ."<br>";
 			echo "Name: ". $user->primeiroNome ." ". $user->ultimoNome ."<br>";
-			echo "Data de Nascimento: ". $user->dataNascimento ."<br>";
+			echo "Idade: ". CalcIdade($user->anoNascimento) ." ". "anos" . "<br>";
 			echo "<a href=" . $_SERVER["PHP_SELF"] . "?eliminar=". $user->userID .">Eliminar</a>";
 			echo "<br><br>";
 		}

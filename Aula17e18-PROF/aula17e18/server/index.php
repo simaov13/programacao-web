@@ -4,13 +4,13 @@
 		public $userID;
 		public $primeiroNome;
 		public $ultimoNome;
-		public $dataNascimento;
+		public $anoNascimento;
 
-		function __construct($userID, $primeiroNome, $ultimoNome, $dataNascimento){
+		function __construct($userID, $primeiroNome, $ultimoNome, $anoNascimento){
 			$this->userID = $userID;
 			$this->primeiroNome = $primeiroNome;
 			$this->ultimoNome = $ultimoNome;
-			$this->dataNascimento = $dataNascimento;
+			$this->anoNascimento = $anoNascimento;
 		}
 	}
 
@@ -27,7 +27,7 @@
 	if($result->num_rows > 0){
 		$users = array();
 		while($row = $result->fetch_assoc()){
-			$user = new User($row["userID"], $row["primeiroNome"], $row["ultimoNome"], $row["dataNascimento"]);
+			$user = new User($row["userID"], $row["primeiroNome"], $row["ultimoNome"], $row["anoNascimento"]);
 			array_push($users, $user);
 		}
 

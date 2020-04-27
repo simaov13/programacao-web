@@ -13,12 +13,12 @@ $(document).ready(function(){
 				userID.innerHTML = "User ID: " + value.userID;
 				var name = document.createElement("div");
 				name.innerHTML = "Name: " + value.primeiroNome + " "+ value.ultimoNome;
-				var dataNascimento = document.createElement("div");
-				email.innerHTML = "Data de nascimento: " + value.dataNascimento;
+				var anoNascimento = document.createElement("div");
+				anoNascimento.innerHTML = "Idade: " + value.anoNascimento;
 
 				$("#usersList").append(userID);
 				$("#usersList").append(name);
-				$("#usersList").append(dataNascimento);
+				$("#usersList").append(anoNascimento);
 				$("#usersList").append("<br>");
 			});
 		}
